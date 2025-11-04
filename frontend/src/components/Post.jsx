@@ -259,7 +259,7 @@ function Post({ post }) {
 
   const deletePostHandler = async () => {
     try {
-      const res = await axios.delete(`http://localhost:8000/api/v1/post/delete/${post?._id}`, { withCredentials: true });
+      const res = await axios.delete(`https://instaclone-1-xdw6.onrender.com/api/v1/post/delete/${post?._id}`, { withCredentials: true });
       if (res.data.success) {
         const updatedPostData = posts.filter((postItem) => postItem._id !== post?._id);
         dispatch(setPosts(updatedPostData));
@@ -273,7 +273,7 @@ function Post({ post }) {
 
   const bookmarkHandler = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/post/${post?._id}/bookmark`, { withCredentials: true });
+      const res = await axios.get(`https://instaclone-1-xdw6.onrender.com/api/v1/post/${post?._id}/bookmark`, { withCredentials: true });
       if (res.data.success) toast.success(res.data.message);
     } catch (error) {
       console.log(error);
