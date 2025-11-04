@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-server.listen(PORT,() => {
-  connectDB();
-  console.log(`Example app listening on port ${PORT}`)
+server.listen(PORT, async () => {
+  await connectDB();
+  console.log(`Example app listening on port ${PORT}`);
 });
