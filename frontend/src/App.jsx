@@ -52,7 +52,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
    if(user){
-    const socketio = io('https://instaclone-1-xdw6.onrender.com', {
+    const socketio = io('http://localhost:8000', {
       query: {
         userId: user?._id
       },
