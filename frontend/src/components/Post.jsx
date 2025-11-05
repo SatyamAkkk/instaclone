@@ -215,7 +215,7 @@ function Post({ post }) {
   const likeOrDislikeHandler = async () => {
     try {
       const action = liked ? 'dislike' : 'like';
-      const res = await axios.get(`http://localhost:8000/api/v1/post/${post._id}/${action}`, { withCredentials: true });
+      const res = await axios.get(`https://instaclone-1-xdw6.onrender.com/api/v1/post/${post._id}/${action}`, { withCredentials: true });
       if (res.data.success) {
         const updatedLikes = liked ? postLike - 1 : postLike + 1;
         setPostLike(updatedLikes);
@@ -237,7 +237,7 @@ function Post({ post }) {
 
   const commentHandler = async () => {
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/post/${post?._id}/comment`, { text }, {
+      const res = await axios.post(`https://instaclone-1-xdw6.onrender.com/api/v1/post/${post?._id}/comment`, { text }, {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true
       });
